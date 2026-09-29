@@ -163,8 +163,27 @@
   footer.etch{ text-align:center; margin-top:30px; font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; color:var(--ink-faint); text-transform:uppercase; }
 
   @media (max-width: 560px){
+    body{ padding:20px 12px calc(100px + env(safe-area-inset-bottom)); }
     .nav-arrow{ width:42px; height:42px; }
     .nav-arrow svg{ width:15px; height:15px; }
+
+    .add-toggle-row{
+      position:fixed; z-index:50; left:0; right:0;
+      bottom:env(safe-area-inset-bottom); margin:0; padding:10px 12px;
+      pointer-events:none;
+    }
+    .toggle-add-btn{ pointer-events:auto; background:var(--bg); }
+    .add-panel{
+      position:fixed; z-index:49; left:12px; right:12px;
+      bottom:calc(68px + env(safe-area-inset-bottom)); width:auto;
+      max-width:none;
+      max-height:calc(100dvh - 100px - env(safe-area-inset-bottom));
+      overflow-y:auto; margin:0; padding:14px;
+    }
+    .drop-zone{ padding:clamp(18px, 6vw, 24px) 12px; }
+    .drop-zone p{ line-height:1.5; }
+    .url-row input{ min-width:0; }
+    .url-row button{ padding:0 14px; }
   }
 </style>
 </head>
